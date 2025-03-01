@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Battery Data Dashboard</title>
+</head>
+<body>
+    <h1>Battery Data</h1>
+    <div id="data"></div>
+    <script>
+        fetch('/api/battery/1001')
+          .then(res => res.json())
+          .then(data => {
+            document.getElementById('data').innerText = JSON.stringify(data, null, 2);
+          });
+    </script>
+</body>
+</html>
